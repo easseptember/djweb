@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    tr td{border: 1px solid black;}
+</style>
+<a href="/add/">
+Add
+</a>
+<hr/>
+<table width="70%" style="border: 1px solid #cccccc">
+    <th>标题</th><th>内容</th><th>时间</th><th>操作</th>
+{% for info in list %}
+    <tr>
+        <td>{{ info.title}}</td>
+        <td>{{ info.content}}</td>
+        <td>{{ info.time}}</td>
+
+        <td><a href="/delete/?id={{ info.id}}"> 删除</a> <a href="/update/?id={{ info.id}}">修改</a></td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
